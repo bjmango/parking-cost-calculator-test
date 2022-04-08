@@ -3,7 +3,7 @@
 import parkingRatesDescription from '../fixtures/constants.json'
 
 
-describe('Parking Cost Calculator', () => {
+describe('Parking Rates Descriptions', () => {
   beforeEach(() => {
     cy.visit('https://www.shino.de/parkcalc/index.php')
   })
