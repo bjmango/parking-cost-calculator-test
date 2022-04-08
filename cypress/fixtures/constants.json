@@ -1,0 +1,14 @@
+{
+    "appName": "PARKING COST CALCULATOR",
+    "table": {
+        "parkingLot": { "name": "Choose a Parking Lot", "options": ["Valet Parking"] },
+        "entryDate": { "name": "Please input entery date and time" },
+        "leavingDate": { "name": "Please input leaving data and time" }
+    },
+    "parkingRates": "PARKING RATES",
+    "valetParking": "Valet Parking\n\t$18 per day\n\t$12 for five hours or less",
+    "shortTermParking": "Short-Term (hourly) Parking\n        $2.00 first hour; $1.00 each additional 1/2 hour\n\t$24.00 daily maximum\t\t\t\t\t        ",
+    "longTermGarageParking": "Long-Term Garage Parking\n\t$2.00 per hour\n        $12.00 daily maximum\n\t$72.00 per week (7th day free)",
+    "longTermSurfaceParking": "Long-Term Surface Parking (North Lot)\n\t$2.00 per hour\n\t$10.00 daily maximum\n\t$60.00 per week (7th day free)",
+    "economyLotParking": "Economy Lot Parking\n\t$2.00 per hour\n\t$9.00 daily maximum\n\t$54.00 per week (7th day free)\n\t"
+}
