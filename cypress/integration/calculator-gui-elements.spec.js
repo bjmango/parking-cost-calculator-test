@@ -29,7 +29,6 @@ describe('GUI elements display and status', () => {
 
   it('Should have 5 types of parking lots options in the drop-down', () => {
     const parkingLotOptions = textResources.tableRows.chooseParkingLot.options
-    console.log(parkingLotOptions)
     cy.get('select[name="ParkingLot"]').children().should('have.length', 5)
       .each((option, index, collection) => {
         const elm = cy.wrap(option)

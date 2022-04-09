@@ -31,5 +31,8 @@
     "longTermGarageParking": "Long-Term Garage Parking\n\t$2.00 per hour\n        $12.00 daily maximum\n\t$72.00 per week (7th day free)",
     "longTermSurfaceParking": "Long-Term Surface Parking (North Lot)\n\t$2.00 per hour\n\t$10.00 daily maximum\n\t$60.00 per week (7th day free)",
     "economyLotParking": "Economy Lot Parking\n\t$2.00 per hour\n\t$9.00 daily maximum\n\t$54.00 per week (7th day free)\n\t",
-    "button": "Calculate"
+    "dateFormatErrorMsg": "ERROR! Enter A Correctly Formatted Date",
+    "dateErrorMsg": "ERROR! Your Leaving Date Or Time Is Before Your Starting Date or Time",
+    "button": "Calculate",
+    "footerMsg": "A Lost Ticket Fee of $10.00 will be assessed when the original parking stub cannot be produced when exiting the parking facilities (does not apply to Valet Parking)."
 }

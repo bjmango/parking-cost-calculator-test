@@ -13,6 +13,21 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
+Cypress.Commands.add('setDateTime', (type, dateStr, timeStr, meridiem) => {
+  let typeStr = null;
+  if (type === 'starting') {
+    typeStr = 'Starting'
+  } else if (type === 'leaving') {
+    typeStr = "Leaving"
+  }
+  cy.get(`input[name="${typeStr}Date"]`).clear().type(dateStr)
+  cy.get(`input[name="${typeStr}Time"]`).clear().type(timeStr)
+  if (meridiem.toLowerCase() === 'am') {
+    cy.get(`input[name="${typeStr}TimeAMPM"]`).first().click()   // AM
+  } else if (meridiem === 'pm') {
+    cy.get(`input[name="${typeStr}TimeAMPM"]`).last().click()   // PM}
+  }
+})
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
