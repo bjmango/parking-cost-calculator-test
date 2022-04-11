@@ -2,12 +2,20 @@
 
 import textResources from '../fixtures/constants.json'
 
+// todo: text styling verification
 
 describe('GUI elements display and status', () => {
   beforeEach(() => {
     cy.visit('https://www.shino.de/parkcalc/index.php')
   })
-  it('Descriptions in the table should follow the requirements', () => {
+
+
+  it('Application name should be "Parking cost calculator"', () => {
+    const appName = textResources.appName
+    cy.get('.PageTitle').should('have.text', appName)
+  })
+
+  it('descriptions in the table should follow the requirements', () => {
     const labels = textResources.tableRows.labels
     cy.get('td[class="BodyCopy"]').each(($elm, index, collection) => {
       switch (index) {
@@ -27,7 +35,7 @@ describe('GUI elements display and status', () => {
     })
   })
 
-  it('Should have 5 types of parking lots options in the drop-down', () => {
+  it('should have 5 types of parking lots options in the drop-down', () => {
     const parkingLotOptions = textResources.tableRows.chooseParkingLot.options
     cy.get('select[name="ParkingLot"]').children().should('have.length', 5)
       .each((option, index, collection) => {
@@ -54,12 +62,12 @@ describe('GUI elements display and status', () => {
 
   })
 
-  it('Should date inputs default to "MM/DD/YYYY"', () => {
+  it('date inputs value should default to "MM/DD/YYYY"', () => {
     cy.get('input[name="StartingDate"]').should('have.value', 'MM/DD/YYYY').and('be.enabled')
     cy.get('input[name="LeavingDate"]').should('have.value', 'MM/DD/YYYY').and('be.enabled')
   })
 
-  it('Should time inputs default to "12:00" and "AM"', () => {
+  it('time inputs value should default to "12:00" and "AM"', () => {
     cy.get('input[name="StartingTime"]').should('have.value', '12:00').and('be.enabled')
     cy.get('input[name="LeavingTime"]').should('have.value', '12:00').and('be.enabled')
     cy.get('input[name="StartingTimeAMPM"]').first().should('have.value', 'AM').and('be.enabled').and("be.checked")
@@ -68,7 +76,7 @@ describe('GUI elements display and status', () => {
     cy.get('input[name="LeavingTimeAMPM"]').last().should('have.value', 'PM').and('be.enabled').and("not.be.checked")
   })
 
-  it("should have two date picker enabled", () => {
+  it("should have two date pickers and are enabled", () => {
     const hrefStarting = textResources.tableRows.entryDate.href
     const hrefLeaving = textResources.tableRows.leavingDate.href
     cy.get('tr').each(($row, index, collection) => {
@@ -96,14 +104,11 @@ describe('GUI elements display and status', () => {
     })
   })
 
-  // cy.get(':nth-child(2) > :nth-child(2) > a ').should('be.visible')
-
-
-  it("Should estimated parking cost default to $0", () => {
+  it("the estimated parking cost should default to $0", () => {
     cy.get('td[class="SubHead"]').should('have.text', '$ 0')
   })
 
-  it('Should have "Calculate" button enabled by default', () => {
+  it('the "Calculate" button should be enabled by default', () => {
     const btnText = textResources.button
     cy.get('input[type="submit"]').should("have.value", btnText).and("be.enabled")
   })

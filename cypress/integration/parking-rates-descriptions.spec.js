@@ -8,12 +8,7 @@ describe('Parking Rates Descriptions', () => {
     cy.visit('https://www.shino.de/parkcalc/index.php')
   })
 
-  it("Application name displays correct", () => {
-    const appName = textResources.appName
-    cy.get('.PageTitle').should('have.text', appName)
-  })
-
-  it("Parking rates descriptions should follow requirements", () => {
+  it("parking rates descriptions should follow requirements", () => {
     const { parkingRates, valetParking, shortTermParking, longTermGarageParking, longTermSurfaceParking, economyLotParking
     } = textResources
     Cypress.$('p[class="BodyCopy"]').each((index, $el, $list) => {
@@ -40,7 +35,7 @@ describe('Parking Rates Descriptions', () => {
     })
   })
 
-  it('Footer message should follow the requirement', () => {
+  it('footer message should follow the requirement', () => {
     const footerMsg = textResources.footerMsg
     cy.get('i').should('have.text', footerMsg)
   })
