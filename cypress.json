@@ -1,5 +1,9 @@
 {
-    "ignoreTestFiles": ["**/1-getting-started/*.js", "**/2-advanced-examples/*.js"],
-    "viewportWidth": 800,
-    "viewportHeight": 600
+  "ignoreTestFiles": [
+    "**/1-getting-started/*.js",
+    "**/2-advanced-examples/*.js"
+  ],
+  "viewportWidth": 800,
+  "viewportHeight": 600,
+  "projectId": "pw29vt"
 }
